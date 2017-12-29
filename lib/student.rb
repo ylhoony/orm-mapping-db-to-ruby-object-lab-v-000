@@ -67,7 +67,7 @@ class Student
     SQL
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
-    end.slice(0, x.to_i -1)
+    end[0..x]
     binding.pry
   end
 
